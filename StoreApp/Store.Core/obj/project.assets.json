@@ -503,11 +503,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj",
       "projectName": "Store.Core",
-      "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj",
+      "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj",
       "packagesPath": "C:\\Users\\Eagha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\obj\\",
+      "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Eagha\\AppData\\Roaming\\NuGet\\NuGet.Config",

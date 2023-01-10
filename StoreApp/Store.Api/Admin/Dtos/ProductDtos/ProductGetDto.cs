@@ -9,6 +9,7 @@
         public decimal DiscountPercent { get; set; }
         public decimal DiscountedPrice { get; set; }
         public bool StockStatus { get; set; }
+        public string ImageUrl { get; set; }
         public CategoryInProductGetDto Category { get; set; }
     }
 

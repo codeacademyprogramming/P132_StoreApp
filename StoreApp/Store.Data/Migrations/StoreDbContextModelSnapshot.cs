@@ -262,6 +262,11 @@ namespace Store.Data.Migrations
                     b.Property<decimal>("DiscountPercent")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)

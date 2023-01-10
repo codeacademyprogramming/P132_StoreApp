@@ -14,6 +14,7 @@ namespace Store.Data.Configurations
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.Property(x => x.Name).IsRequired(true).HasMaxLength(100);
+            builder.Property(x => x.Image).IsRequired(true).HasMaxLength(100);
             builder.Property(x => x.SalePrice).HasColumnType("decimal(18,2)");
             builder.Property(x => x.CostPrice).HasColumnType("decimal(18,2)");
             builder.Property(x => x.DiscountPercent).HasColumnType("decimal(18,2)");

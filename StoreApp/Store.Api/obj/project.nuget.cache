@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "byxPRMvmwhYiaLgbaZxCEZU9Cr+f+HHno8zaU5HbH0MvC8CmXq8IEwQMVozW4zRwKVS87Hlcwlp7X1h2tzqAcQ==",
+  "dgSpecHash": "G7NMOSi6dzdOZlkni/z0VFtTvey8WV5uSpE16JoE+ucSA00sdws6QkKl3SkZ9zzc7yChoypc1FreCjEjsRqfmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Api\\Store.Api.csproj",
+  "projectFilePath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\Store.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eagha\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\fluentvalidation\\9.5.4\\fluentvalidation.9.5.4.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.5.4\\fluentvalidation.aspnetcore.9.5.4.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.5.4\\fluentvalidation.dependencyinjectionextensions.9.5.4.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\microelements.swashbuckle.fluentvalidation\\4.1.0\\microelements.swashbuckle.fluentvalidation.4.1.0.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.12\\microsoft.aspnetcore.authentication.jwtbearer.6.0.12.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.12\\microsoft.aspnetcore.cryptography.internal.6.0.12.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.12\\microsoft.aspnetcore.cryptography.keyderivation.6.0.12.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.12\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.12.nupkg.sha512",
@@ -35,11 +37,11 @@
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identity.client\\4.21.1\\microsoft.identity.client.4.21.1.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.8.0\\microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\microsoft.identitymodel.protocols.6.8.0.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.0\\microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.0\\microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -52,7 +54,7 @@
     "C:\\Users\\Eagha\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
-    "C:\\Users\\Eagha\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.8.0\\system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "C:\\Users\\Eagha\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.0\\system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\system.runtime.caching\\4.7.0\\system.runtime.caching.4.7.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
@@ -63,5 +65,16 @@
     "C:\\Users\\Eagha\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: MicroElements.Swashbuckle.FluentValidation 4.1.0 requires Swashbuckle.AspNetCore (>= 5.5.1 && < 6.0.0) but version Swashbuckle.AspNetCore 6.2.3 was resolved.",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

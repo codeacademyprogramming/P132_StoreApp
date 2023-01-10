@@ -10,3 +10,15 @@ C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\StoreApp\Store.Core\obj\Debug\ne
 C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\StoreApp\Store.Core\obj\Debug\net6.0\ref\Store.Core.dll
 C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.pdb
 C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.csproj.AssemblyReference.cache
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\bin\Debug\net6.0\Store.Core.deps.json
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\bin\Debug\net6.0\Store.Core.dll
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\bin\Debug\net6.0\ref\Store.Core.dll
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\bin\Debug\net6.0\Store.Core.pdb
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.AssemblyInfoInputs.cache
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.AssemblyInfo.cs
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.csproj.CoreCompileInputs.cache
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.dll
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\ref\Store.Core.dll
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.pdb
+C:\Users\Eagha\Desktop\CodeLessons\P132\ASP\API\P132_StoreApp\StoreApp\Store.Core\obj\Debug\net6.0\Store.Core.csproj.AssemblyReference.cache

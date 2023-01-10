@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XN8Scg5SLa3gJA8p5FzXr/e48iOzqNEMl/8RGNePXRC0eox7RwPvPLo6PAWXJNwrxynk/AK/Bhol+Rb3pHvUtw==",
+  "dgSpecHash": "8UhM1XGepaZrEL3zKpKxBfYLXlCmikZaPHBwSWiZzDZjQS/l/xLw3s7nfK7c9eP4VNykKrnkldQ99k6sGl4/GA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj",
+  "projectFilePath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.12\\microsoft.aspnetcore.cryptography.internal.6.0.12.nupkg.sha512",
     "C:\\Users\\Eagha\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.12\\microsoft.aspnetcore.cryptography.keyderivation.6.0.12.nupkg.sha512",

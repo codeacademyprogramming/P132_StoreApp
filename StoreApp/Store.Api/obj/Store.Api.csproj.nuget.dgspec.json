@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Api\\Store.Api.csproj": {}
+    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\Store.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Api\\Store.Api.csproj": {
+    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\Store.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Api\\Store.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\Store.Api.csproj",
         "projectName": "Store.Api",
-        "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Api\\Store.Api.csproj",
+        "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\Store.Api.csproj",
         "packagesPath": "C:\\Users\\Eagha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Api\\obj\\",
+        "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eagha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Data\\Store.Data.csproj": {
-                "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Data\\Store.Data.csproj"
+              "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Data\\Store.Data.csproj": {
+                "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Data\\Store.Data.csproj"
               }
             }
           }
@@ -50,7 +50,15 @@
             },
             "FluentValidation.AspNetCore": {
               "target": "Package",
-              "version": "[11.2.2, )"
+              "version": "[9.5.4, )"
+            },
+            "MicroElements.Swashbuckle.FluentValidation": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -85,14 +93,14 @@
         }
       }
     },
-    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj": {
+    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj",
         "projectName": "Store.Core",
-        "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj",
+        "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj",
         "packagesPath": "C:\\Users\\Eagha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\obj\\",
+        "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eagha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -145,14 +153,14 @@
         }
       }
     },
-    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Data\\Store.Data.csproj": {
+    "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Data\\Store.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Data\\Store.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Data\\Store.Data.csproj",
         "projectName": "Store.Data",
-        "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Data\\Store.Data.csproj",
+        "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Data\\Store.Data.csproj",
         "packagesPath": "C:\\Users\\Eagha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Data\\obj\\",
+        "outputPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eagha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -169,8 +177,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj": {
-                "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\StoreApp\\Store.Core\\Store.Core.csproj"
+              "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj": {
+                "projectPath": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Core\\Store.Core.csproj"
               }
             }
           }

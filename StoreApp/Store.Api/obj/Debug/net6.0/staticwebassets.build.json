@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "QtZm7ffWtnrHB1np2BgPL3FTCgQvhO+Y6NFGH/0Iijc=",
+  "Hash": "R+LgbceUwBOSj5LswtpcZd8W9gz2zYWyEBtimw6mhaA=",
   "Source": "Store.Api",
   "BasePath": "_content/Store.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Store.Api\\wwwroot",
+      "Source": "Store.Api",
+      "ContentRoot": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\wwwroot\\",
+      "BasePath": "_content/Store.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\wwwroot\\uploads\\products\\144c6e3b-a015-4c0a-a96e-a4be963d7be6eventDb.png",
+      "SourceId": "Store.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\wwwroot\\",
+      "BasePath": "_content/Store.Api",
+      "RelativePath": "uploads/products/144c6e3b-a015-4c0a-a96e-a4be963d7be6eventDb.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\products\\144c6e3b-a015-4c0a-a96e-a4be963d7be6eventDb.png"
+    },
+    {
+      "Identity": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\wwwroot\\uploads\\products\\2b9215cd-243d-4368-8c5c-1ad03a5cbd861649423675803706250353b8b0d9.jpg",
+      "SourceId": "Store.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Eagha\\Desktop\\CodeLessons\\P132\\ASP\\API\\P132_StoreApp\\StoreApp\\Store.Api\\wwwroot\\",
+      "BasePath": "_content/Store.Api",
+      "RelativePath": "uploads/products/2b9215cd-243d-4368-8c5c-1ad03a5cbd861649423675803706250353b8b0d9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\products\\2b9215cd-243d-4368-8c5c-1ad03a5cbd861649423675803706250353b8b0d9.jpg"
+    }
+  ]
 }

@@ -1,28 +1,34 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Store.Api.Admin.Dtos.ProductDtos;
+using Store.Api.Helpers;
 using Store.Core.Entities;
 using Store.Data.DAL;
 
 namespace Store.Api.Admin.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+    [Route("admin/api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
         private readonly StoreDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductsController(StoreDbContext context,IMapper mapper)
+        public ProductsController(StoreDbContext context,IMapper mapper,IWebHostEnvironment env)
         {
             _context = context;
             _mapper = mapper;
+            _env = env;
         }
 
         [HttpPost("")]
-        public IActionResult Create(ProductPostDto postDto)
+        public IActionResult Create([FromForm] ProductPostDto postDto)
         {
             if (!_context.Categories.Any(x => x.Id == postDto.CategoryId))
                 return BadRequest(new { error = new { field = "CategoryId", message = "Catgory not found!" } });
@@ -32,6 +38,7 @@ namespace Store.Api.Admin.Controllers
         
 
             Product product = _mapper.Map<Product>(postDto);
+            product.Image = FileManager.Save(postDto.ImageFile, _env.WebRootPath, "uploads/products");
 
             _context.Products.Add(product);
             _context.SaveChanges();
@@ -47,6 +54,8 @@ namespace Store.Api.Admin.Controllers
             if (product == null) return NotFound();
 
             ProductGetDto productDto = _mapper.Map<ProductGetDto>(product);
+            //string baseUrl = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/uploads/products/";
+            //productDto.ImageUrl = baseUrl + product.Image;
 
             return Ok(productDto);
         }
@@ -70,25 +79,25 @@ namespace Store.Api.Admin.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Edit(int id,ProductPostDto postDto)
+        public IActionResult Edit(int id,[FromForm]ProductPutDto putDto)
         {
             Product product = _context.Products.FirstOrDefault(x => x.Id == id);
 
             if (product == null) return NotFound();
 
-            if(product.CategoryId!=postDto.CategoryId && !_context.Categories.Any(x=>x.Id == postDto.CategoryId))
+            if(product.CategoryId!= putDto.CategoryId && !_context.Categories.Any(x=>x.Id == putDto.CategoryId))
                 return BadRequest(new { error = new { field = "CategoryId", message = "Catgory not found!" } });
 
 
-            if (product.Name!=postDto.Name && _context.Products.Any(x =>x.Id!=id && x.Name == postDto.Name))
+            if (product.Name!= putDto.Name && _context.Products.Any(x =>x.Id!=id && x.Name == putDto.Name))
                 return BadRequest(new { error = new { field = "Name", message = "Product already exist!" } });
 
 
-            product.Name = postDto.Name;
-            product.CategoryId = postDto.CategoryId;
-            product.CostPrice = postDto.CostPrice;
-            product.SalePrice = postDto.SalePrice;
-            product.DiscountPercent = postDto.DiscountPercent;
+            product.Name = putDto.Name;
+            product.CategoryId = putDto.CategoryId;
+            product.CostPrice = putDto.CostPrice;
+            product.SalePrice = putDto.SalePrice;
+            product.DiscountPercent = putDto.DiscountPercent;
 
             _context.SaveChanges();
 
