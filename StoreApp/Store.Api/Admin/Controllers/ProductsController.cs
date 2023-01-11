@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Store.Api.Admin.Dtos;
 using Store.Api.Admin.Dtos.ProductDtos;
 using Store.Api.Helpers;
 using Store.Core.Entities;
+using Store.Core.Repositories;
 using Store.Data.DAL;
 
 namespace Store.Api.Admin.Controllers
@@ -16,40 +18,42 @@ namespace Store.Api.Admin.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly StoreDbContext _context;
+        private readonly IProductRepository _productRepository;
+        private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
 
-        public ProductsController(StoreDbContext context,IMapper mapper,IWebHostEnvironment env)
+        public ProductsController(IProductRepository productRepository,ICategoryRepository categoryRepository,IMapper mapper,IWebHostEnvironment env)
         {
-            _context = context;
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
             _mapper = mapper;
             _env = env;
         }
 
         [HttpPost("")]
-        public IActionResult Create([FromForm] ProductPostDto postDto)
+        public async Task<IActionResult> Create([FromForm] ProductPostDto postDto)
         {
-            if (!_context.Categories.Any(x => x.Id == postDto.CategoryId))
+            if (!await _categoryRepository.IsExistAsync(x => x.Id == postDto.CategoryId))
                 return BadRequest(new { error = new { field = "CategoryId", message = "Catgory not found!" } });
 
-            if (_context.Products.Any(x => x.Name == postDto.Name)) 
+            if (await _productRepository.IsExistAsync(x => x.Name == postDto.Name)) 
                 return BadRequest(new { error = new { field = "Name", message = "Product already exist!" } });
         
 
             Product product = _mapper.Map<Product>(postDto);
             product.Image = FileManager.Save(postDto.ImageFile, _env.WebRootPath, "uploads/products");
 
-            _context.Products.Add(product);
-            _context.SaveChanges();
+            await _productRepository.AddAsync(product);
+            await _productRepository.CommitAsync();
 
             return StatusCode(201, product);
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            Product product = _context.Products.Include(x=>x.Category).FirstOrDefault(x => x.Id == id);
+            Product product = await _productRepository.GetAsync(x => x.Id == id,"Category");
 
             if (product == null) return NotFound();
 
@@ -61,35 +65,30 @@ namespace Store.Api.Admin.Controllers
         }
 
         [HttpGet("")]
-        public IActionResult GetAll(int page = 1)
+        public async Task<IActionResult> GetAll(int page = 1)
         {
-            var products = _context.Products.Skip((page - 1) * 4).Take(4).ToList();
+            var query = _productRepository.GetAll(x => !x.IsDeleted);
+            var productDtos = _mapper.Map<List<ProductListItemDto>>(query.Skip((page - 1) * 4).Take(4).ToList());
 
-            var productDtos = products.Select(x => new ProductListItemDto
-            {
-                Id = x.Id,
-                Name = x.Name,
-                CategoryId = x.CategoryId,
-                CostPrice = x.CostPrice,
-                SalePrice = x.SalePrice,
-                DiscountPercent = x.DiscountPercent
-            }).ToList();
+            PaginatedListDto<ProductListItemDto> model =
+                new PaginatedListDto<ProductListItemDto>(productDtos,page,4, query.Count());
+          
 
-            return Ok(productDtos);
+            return Ok(model);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Edit(int id,[FromForm]ProductPutDto putDto)
+        public async Task<IActionResult> Edit(int id,[FromForm]ProductPutDto putDto)
         {
-            Product product = _context.Products.FirstOrDefault(x => x.Id == id);
+            Product product =await _productRepository.GetAsync(x => x.Id == id);
 
             if (product == null) return NotFound();
 
-            if(product.CategoryId!= putDto.CategoryId && !_context.Categories.Any(x=>x.Id == putDto.CategoryId))
+            if(product.CategoryId!= putDto.CategoryId && !await _categoryRepository.IsExistAsync(x=>x.Id == putDto.CategoryId))
                 return BadRequest(new { error = new { field = "CategoryId", message = "Catgory not found!" } });
 
 
-            if (product.Name!= putDto.Name && _context.Products.Any(x =>x.Id!=id && x.Name == putDto.Name))
+            if (product.Name!= putDto.Name && await _productRepository.IsExistAsync(x =>x.Id!=id && x.Name == putDto.Name))
                 return BadRequest(new { error = new { field = "Name", message = "Product already exist!" } });
 
 
@@ -99,20 +98,19 @@ namespace Store.Api.Admin.Controllers
             product.SalePrice = putDto.SalePrice;
             product.DiscountPercent = putDto.DiscountPercent;
 
-            _context.SaveChanges();
-
+            _productRepository.Commit();
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Product product = _context.Products.FirstOrDefault(x => x.Id == id);
+            Product product =await _productRepository.GetAsync(x => x.Id == id);
 
             if (product == null) return NotFound();
 
-            _context.Products.Remove(product);
-            _context.SaveChanges();
+            _productRepository.Remove(product);
+            _productRepository.Commit();
 
             return NoContent();
         }

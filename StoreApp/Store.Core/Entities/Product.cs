@@ -15,6 +15,7 @@ namespace Store.Core.Entities
         public decimal DiscountPercent { get; set; }
         public bool StockStatus { get; set; }
         public string Image { get; set; }
+        public bool IsDeleted { get; set; }
 
         public Category Category { get; set; }
     }

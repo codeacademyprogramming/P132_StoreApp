@@ -11,8 +11,9 @@ namespace Store.Api.Client.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register()
         {
-
             return Ok();
         }
+
+
     }
 }

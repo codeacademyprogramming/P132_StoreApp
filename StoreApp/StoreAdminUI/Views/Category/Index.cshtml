@@ -1,0 +1,36 @@
+﻿@model PaginatedVM<CategoryListItemVM>
+@{
+    ViewData["Title"] = "Index";
+    int order = 0;
+}
+
+<h1>Index</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        order++;
+                        <tr>
+                            <th scope="row">@order</th>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

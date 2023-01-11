@@ -20,7 +20,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "a60e6684-26e4-4928-88e4-7beb2994f7ee": {
+      "ProjectGuid": "a60e6684-26e4-4928-88e4-7beb2994f7ee",
+      "DisplayName": "StoreAdminUI",
+      "ColorIndex": 3
+    },
+    "6b7f398e-18d8-4c9e-b62f-17e92638645c": {
+      "ProjectGuid": "6b7f398e-18d8-4c9e-b62f-17e92638645c",
+      "DisplayName": "StoreAdminUI",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

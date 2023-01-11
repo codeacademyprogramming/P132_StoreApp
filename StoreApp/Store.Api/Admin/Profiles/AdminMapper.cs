@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Store.Api.Admin.Dtos.CategoryDtos;
 using Store.Api.Admin.Dtos.ProductDtos;
+using Store.Api.Helpers;
 using Store.Core.Entities;
 
 namespace Store.Api.Admin.Profiles
@@ -22,7 +23,9 @@ namespace Store.Api.Admin.Profiles
             CreateMap<ProductPostDto, Product>();
             CreateMap<Product, ProductGetDto>()
                 .ForMember(x => x.DiscountedPrice, f => f.MapFrom(s => s.SalePrice * (100 - s.DiscountPercent) / 100))
-                .ForMember(x => x.ImageUrl, f => f.MapFrom(s =>  $"{_httpAccessor.HttpContext.Request.Scheme}://{_httpAccessor.HttpContext.Request.Host}{_httpAccessor.HttpContext.Request.PathBase}/uploads/products/{s.Image}"));
+                .ForMember(x => x.ImageUrl, f => f.MapFrom(s =>  $"{_httpAccessor.HttpContext.Request.BaseUrl()}/uploads/products/{s.Image}"));
+
+            CreateMap<Product, ProductListItemDto>();
         }
     }
 }

@@ -7,8 +7,11 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Store.Api.Admin.Dtos.CategoryDtos;
 using Store.Api.Admin.Profiles;
+using Store.Api.Services;
 using Store.Core.Entities;
+using Store.Core.Repositories;
 using Store.Data.DAL;
+using Store.Data.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +24,10 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 {
     opt.Password.RequireNonAlphanumeric = false;
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<StoreDbContext>();
+
+builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opt =>

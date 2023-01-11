@@ -2,31 +2,33 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Store.Api.Admin.Dtos;
 using Store.Api.Admin.Dtos.CategoryDtos;
 using Store.Core.Entities;
+using Store.Core.Repositories;
 using Store.Data.DAL;
 
 namespace Store.Api.Admin.Controllers
 {
     [ApiExplorerSettings(GroupName = "admin")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
+    //[Authorize(Roles = "SuperAdmin,Admin")]
     [Route("admin/api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly StoreDbContext _context;
         private readonly IMapper _mapper;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public CategoriesController(StoreDbContext context, IMapper mapper)
+        public CategoriesController(IMapper mapper,ICategoryRepository categoryRepository)
         {
-            _context = context;
             _mapper = mapper;
+            _categoryRepository = categoryRepository;
         }
 
         [HttpPost("")]
-        public IActionResult Create(CategoryPostDto postDto)
+        public async Task<IActionResult> Create(CategoryPostDto postDto)
         {
-            if (_context.Categories.Any(x => x.Name == postDto.Name))
+            if (await _categoryRepository.IsExistAsync(x=>x.Name == postDto.Name))
             {
                 ModelState.AddModelError("Name", "Category already created!");
                 return BadRequest(ModelState);
@@ -34,16 +36,16 @@ namespace Store.Api.Admin.Controllers
 
             Category category = _mapper.Map<Category>(postDto);
 
-            _context.Categories.Add(category);
-            _context.SaveChanges();
+            await _categoryRepository.AddAsync(category);
+            await _categoryRepository.CommitAsync();
 
             return StatusCode(201, category);
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            Category category = _context.Categories.FirstOrDefault(x => x.Id == id);
+            Category category = await _categoryRepository.GetAsync(x => x.Id == id);
 
             if (category == null) return NotFound();
 
@@ -55,37 +57,47 @@ namespace Store.Api.Admin.Controllers
         [HttpGet("")]
         public IActionResult GetAll(int page = 1)
         {
-            var categories = _context.Categories.Skip((page - 1) * 4).Take(4).ToList();
+            var query = _categoryRepository.GetAll(x => true);
 
-            var categoryDtos = _mapper.Map<List<CategoryListItemDto>>(categories);
+            var categoryDtos = _mapper.Map<List<CategoryListItemDto>>(query.Skip((page - 1) * 4).Take(4).ToList());
 
-            return Ok(categoryDtos);
+            PaginatedListDto<CategoryListItemDto> model =
+                new PaginatedListDto<CategoryListItemDto>(categoryDtos, page, 4, query.Count());
+
+            return Ok(model);
+        }
+
+        [HttpGet("all")]
+        public IActionResult GetAll()
+        {
+            List<CategoryListItemDto> items = _mapper.Map<List<CategoryListItemDto>>(_categoryRepository.GetAll(x=>true).ToList());
+            return Ok(items);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            Category category = _context.Categories.FirstOrDefault(x => x.Id == id);
+            Category category = await _categoryRepository.GetAsync(x => x.Id == id);
 
             if (category == null) return NotFound();
 
-            _context.Categories.Remove(category);
-            _context.SaveChanges();
+           _categoryRepository.Remove(category);
+            _categoryRepository.Commit();
 
             return NoContent();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Edit(int id,CategoryPostDto postDto)
+        public async Task<IActionResult> Edit(int id,CategoryPostDto postDto)
         {
-            Category category = _context.Categories.FirstOrDefault(x => x.Id == id);
+            Category category = await _categoryRepository.GetAsync(x => x.Id == id);
 
             if (category == null) return NotFound();
 
-            if (_context.Categories.Any(x => x.Id != id && x.Name == postDto.Name)) return BadRequest();
+            if (await _categoryRepository.IsExistAsync(x => x.Id != id && x.Name == postDto.Name)) return BadRequest();
 
             category.Name = postDto.Name;
-            _context.SaveChanges();
+            _categoryRepository.Commit();
 
             return NoContent();
         }
